@@ -71,7 +71,7 @@ SUPPORTING EVIDENCE: Month twelve had an average weekly sales value of around $1
 
 Business RECOMENDATION: Walmart could figure out what factors led to an increase in December Sales compared to other months.
 
-2. HOLIDAY Performance  
+2. Holiday Performance  
 
 FINDING: Store 20 had the highest average weekly sales during the holidays.
 
