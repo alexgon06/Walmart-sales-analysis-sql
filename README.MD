@@ -29,36 +29,59 @@ The dataset contains weekly sales data for 45 Walmart stores. The main columns i
 **Store Performance-
 
 Which stores generated the highest total sales?
+
 Which stores generated the lowest total sales?
-What is the average weekly sales for each store?
+
+What is the average weekly sales for each store? 
+
 Which stores have the most consistent weekly sales (lowest variation)?
+
 Which stores experience the largest fluctuations in sales?
-Weekly & Seasonal Trends
+
+**Weekly & Seasonal Trends-
+
 What were the top 10 highest-selling weeks?
+
 What were the top 10 lowest-selling weeks?
+
 Which months generate the highest average sales?
+
 Which years generated the highest total sales?
+
 How do weekly sales trend over time?
 
 **Holiday Analysis- 
 
 Do holiday weeks generate higher average sales than non-holiday weeks?
+
 Which stores benefit the most from holidays?
+
 Which stores benefit the least from holidays?
 
 **External Factors- 
 
 Is there a relationship between temperature and weekly sales?
+
 Is there a relationship between fuel prices and weekly sales?
+
 Is there a relationship between CPI and weekly sales?
+
 Is there a relationship between unemployment and weekly sales?
+
 Rank every store by total sales.
+
 Find stores performing above the company average.
+
 Find stores performing below the company average.
+
 Calculate each store's cumulative (running) sales over time.
+
 Compare each week's sales to the previous week (LAG()).
+
 Identify each store's best-performing week.
+
 Identify each store's worst-performing week.
+
 Classify stores into High, Medium, and Low performers using CASE.**
 
 ## Key Insights
