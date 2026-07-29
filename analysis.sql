@@ -1,3 +1,12 @@
+-- =====================================================
+-- WALMART SALES ANALYSIS
+-- =====================================================
+
+
+-- =====================================================
+-- 1. DATA EXPLORATION
+-- =====================================================
+
 SELECT * FROM "walmart_sales";
 
 SELECT 
@@ -15,6 +24,11 @@ FROM "walmart_sales";
 SELECT AVG(Weekly_Sales)
 FROM "walmart_sales";
 
+
+-- =====================================================
+-- 2. STORE PERFORMANCE
+-- =====================================================
+
 SELECT 
 AVG(Weekly_Sales),
 Store
@@ -30,6 +44,11 @@ LIMIT 10;
 SELECT * FROM "walmart_sales"
 ORDER BY Weekly_Sales ASC
 LIMIT 10;
+
+
+-- =====================================================
+-- 3. MONTHLY AND YEARLY SALES TRENDS
+-- =====================================================
 
 SELECT 
     substr(Date, 4, 2) AS Month,
@@ -69,6 +88,11 @@ substr(Date, 7, 4),
 substr(Date, 4, 2),
 substr(Date, 1, 2) ASC;
 
+
+-- =====================================================
+-- 4. HOLIDAY SALES ANALYSIS
+-- =====================================================
+
 SELECT AVG(Weekly_Sales) AS Holiday_Avg_Weekly_Sales
 FROM "walmart_sales"
 WHERE Holiday_Flag = 1;
@@ -89,6 +113,11 @@ WHERE Holiday_Flag = 1
 GROUP BY STORE 
 ORDER BY LOW_Holiday_Avg_Weekly_Sales ASC;
 
+
+-- =====================================================
+-- 5. STORE TOTALS AND AVERAGES
+-- =====================================================
+
 SELECT  STORE, SUM(Weekly_Sales) AS Total_Weekly_Sales
 FROM "walmart_sales"
 GROUP BY STORE 
@@ -105,6 +134,11 @@ FROM "walmart_sales"
 GROUP BY STORE 
 HAVING Avg_Weekly_Sales < 1046964.87756177
 ORDER BY Avg_Weekly_Sales DESC;
+
+
+-- =====================================================
+-- 6. WINDOW FUNCTIONS
+-- =====================================================
 
 Select  
 Date,
@@ -133,6 +167,11 @@ substr(Date, 1, 2) ASC)
 AS previous_Week_Sales
 FROM "walmart_sales";
 
+
+-- =====================================================
+-- 7. HIGHEST AND LOWEST STORE SALES
+-- =====================================================
+
 Select 
 Store,
 MAX(Weekly_Sales) AS Highest_Weekly_Sale
@@ -149,6 +188,10 @@ GROUP BY Store
 ORDER BY Lowest_Weekly_Sale ASC;
 
 
+-- =====================================================
+-- 8. STORE SALES CATEGORIES
+-- =====================================================
+
 SELECT 
 Store,  
 CASE
@@ -159,6 +202,11 @@ END AS SALES_Category
 FROM "walmart_sales"
 GROUP BY Store
 Order BY Store DESC;
+
+
+-- =====================================================
+-- 9. SALES VARIANCE
+-- =====================================================
 
 SELECT
 Store,
@@ -177,6 +225,10 @@ GROUP BY Store
 ORDER BY HIGH_Sales_Variance DESC;
 
 
+-- =====================================================
+-- 10. FUEL PRICE ANALYSIS
+-- =====================================================
+
 SELECT 
 AVG(Weekly_Sales) AS Avg_Weekly_Sales,
 CASE
@@ -188,6 +240,11 @@ END AS Fuel_Price_Category
 FROM "walmart_sales"
 GROUP BY Fuel_Price_Category
 ORDER BY Avg_Weekly_Sales DESC;
+
+
+-- =====================================================
+-- 11. TEMPERATURE ANALYSIS
+-- =====================================================
 
 SELECT 
 AVG(Weekly_Sales) AS Avg_Weekly_Sales,
@@ -202,6 +259,10 @@ GROUP BY Temperature_Category
 ORDER BY Avg_Weekly_Sales DESC;
 
 
+-- =====================================================
+-- 12. CPI ANALYSIS
+-- =====================================================
+
 SELECT 
 AVG(Weekly_Sales) AS Avg_Weekly_Sales,
 CASE
@@ -215,6 +276,10 @@ GROUP BY CPI_Category
 ORDER BY Avg_Weekly_Sales DESC;
 
 
+-- =====================================================
+-- 13. UNEMPLOYMENT ANALYSIS
+-- =====================================================
+
 SELECT
 AVG(Weekly_Sales) AS Avg_Weekly_Sales,
 CASE
@@ -226,4 +291,3 @@ CASE
 FROM "walmart_sales"
 GROUP BY Unemployment_Category
 ORDER BY Avg_Weekly_Sales DESC;
-
